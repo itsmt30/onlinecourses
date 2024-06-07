@@ -48,4 +48,5 @@ def Manage_Courses(request):
     return render(request,"Manage_Courses.html",{"Data":Data})
     
 
-    
+def Register_page(request):
+    return render(request,"Register_page.html")

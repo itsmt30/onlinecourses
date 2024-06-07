@@ -28,6 +28,7 @@ urlpatterns = [
      path('feedback', views.feedback, name='feedback'),
      path('Add_courses', views.Add_courses, name='Add_courses'),
      path('addCourse', views.addCourse, name='addCourse'),
+     path('Register_page', views.Register_page, name='Register_page')
      
 
 
