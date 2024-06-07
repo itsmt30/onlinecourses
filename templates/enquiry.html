@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiry Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Enquiry Form</h2>
+  <form id="enquiryForm">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+    <label for="email">Your Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="Subject.." required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write something.." required></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Retrieve form data
+    var formData = new FormData(this);
+
+    // Display form data for testing
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ': ' + pair[1]);
+    }
+
+    // Here, you can send the form data to a server using AJAX or other methods
+    // For demonstration purposes, we'll just display a success message
+    alert("Thank you for your enquiry. We will get back to you soon!");
+    
+    // Clear the form after submission
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
